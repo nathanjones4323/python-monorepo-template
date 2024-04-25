@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  project-1:
+    build:
+      context: .
+      dockerfile: ./apps/project-1/Dockerfile
+    command: python project_1/main.py  # Override the default command if needed
+    env_file:
+      - ./apps/project-1/.env
+
+
+  app_1:
+    build:
+      context: .
+      dockerfile: ./apps/app-1/Dockerfile
+    command: python app_1/main.py  # Override the default command if needed
+    env_file:
+      - ./apps/app-1/.env
+
+
+
+  app_2:
+    build:
+      context: .
+      dockerfile: ./apps/app-2/Dockerfile
+    command: python app_2/main.py  # Override the default command if needed
+    env_file:
+      - ./apps/app-2/.env
+
